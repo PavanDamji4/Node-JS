@@ -1,0 +1,17 @@
+{
+  "name": "10_calculator-prs-2",
+  "version": "1.0.0",
+  "description": "The calculator and nodemon usage",
+  "license": "ISC",
+  "author": "Pavan Damji",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

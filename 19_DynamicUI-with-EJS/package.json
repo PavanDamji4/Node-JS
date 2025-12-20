@@ -1,0 +1,23 @@
+{
+  "name": "12_express-intro",
+  "version": "1.0.0",
+  "description": "\"Express Introduction and hands on Package.json file\"",
+  "license": "ISC",
+  "author": "Pavan Damji",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "nodemon": "^3.1.11",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
+  }
+}
