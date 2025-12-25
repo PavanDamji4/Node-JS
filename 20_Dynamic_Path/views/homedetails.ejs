@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= home.title %> - Airbnb Clone
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/home?username=<%= encodeURIComponent(username) %>"
+                        class="text-red-500 font-bold text-2xl tracking-tighter">airbnb</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/home?username=<%= encodeURIComponent(username) %>"
+                        class="text-gray-600 hover:text-red-500 transition px-3 py-2 rounded-md font-medium">Home</a>
+                    <a href="/homelist?username=<%= encodeURIComponent(username) %>"
+                        class="text-gray-600 hover:text-red-500 transition px-3 py-2 rounded-md font-medium">Listings</a>
+                    <a href="/favourite?username=<%= encodeURIComponent(username) %>"
+                        class="text-gray-600 hover:text-red-500 transition px-3 py-2 rounded-md font-medium">Favorites</a>
+                </div>
+                <div>
+                    <span class="text-sm font-medium text-gray-500">Welcome, <%= username %></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- Image Section -->
+            <div class="relative h-96 w-full">
+                <img src="<%= home.imageUrl %>" alt="<%= home.title %>" class="w-full h-full object-cover">
+                <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold shadow-md">
+                    $<%= home.price %> <span class="font-normal text-gray-500">/ night</span>
+                </div>
+            </div>
+
+            <!-- Details Section -->
+            <div class="p-8">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                            <%= home.title %>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>
+                            <%= home.location %>
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-1 text-yellow-500">
+                        <!-- Star rating placeholder -->
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        <span class="text-gray-500 text-sm ml-1">(5.0)</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 border-t border-gray-100 pt-6">
+                    <h2 class="text-xl font-semibold mb-3">Description</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        <%= home.description %>
+                    </p>
+                </div>
+
+                <!-- Booking Section -->
+                <div class="mt-8 flex items-center justify-between bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <div>
+                        <p class="text-sm text-gray-500">Price per night</p>
+                        <p class="text-3xl font-bold text-gray-900">$<%= home.price %>
+                        </p>
+                    </div>
+                    <button
+                        class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 duration-200">
+                        Reserve Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="/home" class="text-red-500 hover:text-red-700 font-medium">← Back to Listings</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
